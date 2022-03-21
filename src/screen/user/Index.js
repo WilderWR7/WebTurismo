@@ -1,90 +1,28 @@
 import React from 'react'
-import { NavBar } from '../../components/public/NavBar'
-import { agency, hotel, lugar } from '../../data/info'
-import { CardDestination } from '../../components/public/CardDestination'
-import { TitleSection } from '../../components/public/TitleSection'
-import { CardHotel } from '../../components/public/CardHotel'
-import { Footer } from '../../components/public/Footer'
+import { Link } from 'react-router-dom'
+import { SectionHotel } from '../../components/public/SectionHotel'
+import { SectionPlace } from '../../components/public/SectionPlace'
+import { SectionAgency } from '../../components/public/SectionAgency'
 
 export const Index = () => {
   return (
     <>
-      <NavBar/>
     <section className="heronuevo">
       <div className="contenido-heronuevo">
         <h2 className="titulo">Guía de Turismo </h2>
         <div className="buscador">
           <input className="buscar_texto" type="text" placeholder="Buscar"/>
-          <a className="boton" href="#"> <i className="fas fa-search"></i>
-          </a>
+          <Link className="boton" to="#"> <i className="fas fa-search"></i>
+          </Link>
         </div>
-        {/* <!-- <p> La Paz,Bolivia <br>Buscador</p> --> */}
       </div>
     </section>
-    {/* <!-- places section start --> */}
-    <section className="courses-section section-padding">
-      <section className="seccion-grid">
-        <div className="container">
-          <TitleSection first={'LUGARES TURÍSTICOS'} second={'ENCUENTRA EL LUGAR ADECUADO PARA TI Y TU FAMILIA'} />
-          <div className="row">
-            {
-              lugar.map((l,index)=> <CardDestination key={l.title+index} {...l}/>)
-            }
-          </div>
+    <SectionPlace/>
 
-          <div className="row">
-            <div className="col-12 text-center mt-3">
-              <a href="courses.html" className="btn btn-theme">Ver todos los Lugares Turísticos</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-    {/* <!-- places section end --> */}
+    <SectionHotel/>
 
-    {/* <!-- hotels section start --> */}
-    <section className="courses-section section-padding">
-      <section className="seccion-grid">
-        <div className="container">
-          <TitleSection first={'Hoteles'} second={'Encuentra el hotel confortable y cómodo para ti y tu familia'} />
-          <div className="row">
-            {/* <!-- courses item start --> */}
-            {
-              hotel.map(hotel=> <CardHotel key={hotel.title} {...hotel}/>)
-            }
-            {/* <!-- courses item end --> */}
+    <SectionAgency/>
 
-          </div>
-          <div className="row">
-            <div className="col-12 text-center mt-3">
-              <a href="hotels.html" className="btn btn-theme">Ver todos los Hoteles</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-    {/* <!-- hotels section end --> */}
-    {/* <!-- agencies section start --> */}
-    <section className="courses-section section-padding">
-      <section className="seccion-grid">
-        <div className="container">
-          <TitleSection first={'AGENCIAS TURÍSTICAS'} second={'ENCUENTRA LA AGENCIA QUE OFREZCA LO MEJOR PARA TI Y TU FAMILIA'} />
-          <div className="row">
-            {/* <!-- courses item start --> */}
-            {
-              agency.map(agency=> <CardHotel key={agency.title} {...agency} />)
-            }
-            {/* <!-- courses item end --> */}
-          </div>
-          <div className="row">
-            <div className="col-12 text-center mt-3">
-              <a href="agencies.html" className="btn btn-theme">Ver todas las Agencias Turísticas</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-    {/* <!-- agenciess section end --> */}
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-8">
@@ -178,12 +116,6 @@ export const Index = () => {
           </div>
         </div>
       </section>
-      {/* {/* <!-- become a instructor section end --> */}
-
-      {/* <!-- footer start --> */}
-      <Footer/>
-      {/* <!-- footer end --> */}
-
     </div>
     </>
   )
