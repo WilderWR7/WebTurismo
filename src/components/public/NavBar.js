@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const NavBar = () => {
     return (
@@ -6,7 +7,7 @@ export const NavBar = () => {
         <div className="container">
             <div className="header-main d-flex justify-content-between align-items-center">
                 <div className="header-logo">
-                    <a href="index.html">turismo</a>
+                    <Link to="/">turismo</Link>
                 </div>
                 <button type="button" className="header-hamburger-btn js-header-menu-toggler">
                     <span></span>
@@ -17,23 +18,22 @@ export const NavBar = () => {
                         <i className="fas fa-times"></i>
                     </button>
                     <ul className="menu">
-                        <li className="menu-item"><a href="courses.html">Lugares</a></li>
+                        <li className="menu-item"><Link to="/places">Lugares</Link></li>
                         <li className="menu-item menu-item-has-children">
                             <a href="#" className="js-toggle-sub-menu">Servicios <i className="fas fa-chevron-down"></i></a>
                             <ul className="sub-menu js-sub-menu">
-                                <li className="sub-menu-item"><a href="hotels.html">Hoteles</a></li>
-                                <li className="sub-menu-item"><a href="agencies.html">Agencias de Turismo</a></li>
-                                <li className="sub-menu-item"><a href="#">Promociones</a></li>
+                                <li className="sub-menu-item"><Link to="/hotels">Hoteles</Link></li>
+                                <li className="sub-menu-item"><Link to="/agencies">Agencias de Turismo</Link></li>
                             </ul>
                         </li>
                         <li className="menu-item menu-item-has-children">
                             <a href="#" className="js-toggle-sub-menu">Ingresar <i className="fas fa-chevron-down"></i></a>
                             <ul className="sub-menu js-sub-menu">
-                                <li className="sub-menu-item"><a href="log-in.html">iniciar sesion</a></li>
-                                <li className="sub-menu-item"><a href="sign-up.html">registrarse</a></li>
+                                <li className="sub-menu-item"><Link to="/loginUsers">iniciar sesion</Link></li>
+                                <li className="sub-menu-item"><Link to="/signUpUsers">registrarse</Link></li>
                             </ul>
                         </li>
-                        <li className="menu-item"><a href="contact.html">contáctanos </a></li>
+                        <li className="menu-item"><Link to="contact.html">contáctanos </Link></li>
                     </ul>
                 </nav>
             </div>

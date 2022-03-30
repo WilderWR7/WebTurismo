@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import { LoadingScreen } from "../../components/public/LoadingScreen";
 import { useGetHotels } from "../../hooks/useGetHotels";
-export const CrudAdminScreen = () => {
+export const HotelCrudScreen = () => {
     const [modalInsertar, setModalInsertar] = useState(false);
     const [modalEditar, setModalEditar] = useState(false);
     const [modalEliminar, setModalEliminar] = useState(false);

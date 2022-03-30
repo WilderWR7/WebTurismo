@@ -4,6 +4,7 @@ import { UserGInfo } from './UserGInfo'
 //<div className="col-lg-6 col-md-12">
 
 export const ContainerInfoPersonal = ({styles,title='Usuarios Gerenciales'}) => {
+    
   return (
         <div className={`col-md-12 ${styles}`}>
             <div className="card">

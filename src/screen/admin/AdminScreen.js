@@ -2,31 +2,30 @@ import React from 'react'
 import { CardInfo } from '../../components/admin/CardInfo'
 import { ContainerInfoPersonal } from '../../components/admin/ContainerInfoPersonal'
 import { info, requests } from '../../data/info'
+import { useGetAdmin } from '../../hooks/useGetAdmin'
 
 export const AdminScreen = () => {
+    const {dataManagers,dataUsers,isLoading} = useGetAdmin()
+    console.log(dataManagers)
+    console.log(dataUsers)
+    console.log(isLoading)
     return (
     <div className="page-wrapper"> 
         <div className="container-fluid">
-                {/* <!-- ============================================================== --> */}
                 {/* <!-- Bread crumb and right sidebar toggle --> */}
-                {/* <!-- ============================================================== --> */}
                 <div className="row page-titles">
                     <div className="col-md-5 align-self-center">
                         <h3 className="text-themecolor">Panel de Administración</h3>
                     </div>
                 </div>
-                {/* <!-- ============================================================== --> */}
                 <div className="row">
                     {
                         info.map(i=> <CardInfo key={i.name} {...i}/> )
                     }
                 </div>
-                {/* <!-- ============================================================== --> */}
                 <div className="row">
                     <ContainerInfoPersonal styles={'col-lg-6'}  title = 'Usuarios Gerenciales' />
-                    {/* <!-- ============================================================== --> */}
                     {/* <!-- Activity widget find scss into widget folder--> */}
-                    {/* <!-- ============================================================== --> */}
                     <ContainerInfoPersonal styles={'col-lg-6'}  title = 'Usuarios Cliente' />
                     
                 </div>
@@ -85,7 +84,7 @@ export const AdminScreen = () => {
                 {/* <!-- Twitter facebook and mail boxes --> */}
                 {/* <!-- ============================================================== --> */}
                 <div className="row">
-                    <div className="col-lg-4">
+                    <div className="col-lg-3">
                         <div className="card bg-info text-white">
                             <div className="card-body">
                                 <div className="d-flex">
@@ -101,7 +100,7 @@ export const AdminScreen = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-3">
                         <div className="card bg-primary text-white">
                             <div className="card-body">
                                 <div className="d-flex">
@@ -117,7 +116,7 @@ export const AdminScreen = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-3">
                         <div className="card bg-success text-white">
                             <div className="card-body">
                                 <div className="d-flex">

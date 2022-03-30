@@ -11,16 +11,13 @@ import { LeftSidebar } from '../components/admin/LeftSidebar';
 export const SuperUserRouter = () => {
     return (
         <>
-            <NavBar/>
+            <NavBar type = {'/login'} />
             <LeftSidebar/>
             <Routes>
                 <Route path='/' element={<AdminScreen/>} />
                 <Route path='/userg' element={<UserGerencialScreen/>} />
                 <Route path='/userc' element={<UserClientScreen/>} />
                 <Route path='/usercrud' element={<CrudAdminScreen/>} />
-
-
-
             </Routes>
         </>
     )

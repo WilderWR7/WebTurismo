@@ -2,14 +2,13 @@ import React, { useState } from "react";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import { LoadingScreen } from "../../components/public/LoadingScreen";
-import { useGetHotels } from "../../hooks/useGetHotels";
-export const CrudAdminScreen = () => {
+import { useGetAgencies } from "../../hooks/useGetAgencies";
+export const AgenciesCrudScreen = () => {
     const [modalInsertar, setModalInsertar] = useState(false);
     const [modalEditar, setModalEditar] = useState(false);
     const [modalEliminar, setModalEliminar] = useState(false);
     const [copa, setcopa] = useState([]);
     const [data, setInput] = useState([]);
-    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setInput((prevState) => ({
@@ -41,13 +40,13 @@ export const CrudAdminScreen = () => {
     //     });
     // };    
     
-    const {dataHotel,isLoading}=useGetHotels()
-
-    console.log(dataHotel)
+    const {dataAgencies,isLoading}=useGetAgencies()
+    
     if(isLoading){
         return <LoadingScreen/>
     }
-    const {hotels} = dataHotel
+    const {agencies} = dataAgencies
+    console.log(agencies)
 
     //-------PETICIONES POST   añade
     // const peticionPost = async () => {
@@ -144,11 +143,11 @@ const seleccionarFramework = (hotel, caso) => {
                     </thead>
                     <tbody>
                     {
-                        hotels && hotels.map((hotel) => (
+                        agencies && agencies.map((hotel) => (
                             <tr key={hotel.Name}>
-                                <td>{hotel.Cod_Hotel}</td>
+                                <td>{hotel.Cod_Agency}</td>
                                 <td>{hotel.Name}</td>
-                                <td>{hotel.Location}</td>
+                                <td>{hotel.Location.length > 70 ?hotel.Location.slice(0,70) + ' ...':hotel.Location  }</td>
                                 <td>
                                     <button className="btn btn-primary" onClick={() => seleccionarFramework(hotel, "Editar")}>Editar</button>
                                     {" "}

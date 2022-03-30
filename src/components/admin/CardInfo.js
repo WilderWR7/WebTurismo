@@ -2,7 +2,7 @@ import React from 'react'
 
 export const CardInfo = ({name,cant,icon}) => {
   return (
-    <div className="col-lg-3">
+    <div className="col-lg-3 d-flex">
         <div className="card">
             <div className="card-body">
                 <div className="d-flex no-block">
