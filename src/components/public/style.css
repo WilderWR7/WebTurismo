@@ -1,0 +1,180 @@
+.loader{
+  /* position: fixed;
+  left:0;
+  top: 0; */
+  height: 100%;
+  width: 100%;
+  background-color: #242a33;
+  /* background-color: hsl(253, 38%, 15%); */
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+.loader .circle{
+  --circle-size: 100px;
+  height: var(--circle-size);
+  width: var(--circle-size);
+/*   background-color: blue; */
+  border-radius: 50%;
+  position: relative;
+}
+.loader .dot1{
+  --i: 1;
+  --total-dots: 8;
+  --duration: 2000ms;
+  --dot-decrement: calc(1px * var(--i));
+  --dot-size: calc(16px - var(--dot-decrement));
+  height: var(--dot-size);
+  width: var(--dot-size);
+  background-color: hsl(34, 78%, 60%);
+  position: absolute;
+  left: calc(50% - var(--dot-size) / 2);
+  top: calc(0% - var(--dot-size) / 2);
+  transform-origin: calc(var(--dot-size) / 2) calc((var(--circle-size) / 2) + var(--dot-size) / 2);
+  animation: spin var(--duration) ease-out infinite;
+  animation-delay: calc(((var(--duration) / 2) / var(--total-dots)) * var(--i));
+  border-radius: 50%;
+}
+
+.loader .dot2{
+  --i: 2;
+  --total-dots: 8;
+  --duration: 2000ms;
+  --dot-decrement: calc(1px * var(--i));
+  --dot-size: calc(16px - var(--dot-decrement));
+  height: var(--dot-size);
+  width: var(--dot-size);
+  background-color: hsl(34, 78%, 60%);
+  position: absolute;
+  left: calc(50% - var(--dot-size) / 2);
+  top: calc(0% - var(--dot-size) / 2);
+  transform-origin: calc(var(--dot-size) / 2) calc((var(--circle-size) / 2) + var(--dot-size) / 2);
+  animation: spin var(--duration) ease-out infinite;
+  animation-delay: calc(((var(--duration) / 2) / var(--total-dots)) * var(--i));
+  border-radius: 50%;
+}
+.loader .dot3{
+  --i: 3;
+  --total-dots: 8;
+  --duration: 2000ms;
+  --dot-decrement: calc(1px * var(--i));
+  --dot-size: calc(16px - var(--dot-decrement));
+  height: var(--dot-size);
+  width: var(--dot-size);
+  background-color: hsl(34, 78%, 60%);
+  position: absolute;
+  left: calc(50% - var(--dot-size) / 2);
+  top: calc(0% - var(--dot-size) / 2);
+  transform-origin: calc(var(--dot-size) / 2) calc((var(--circle-size) / 2) + var(--dot-size) / 2);
+  animation: spin var(--duration) ease-out infinite;
+  animation-delay: calc(((var(--duration) / 2) / var(--total-dots)) * var(--i));
+  border-radius: 50%;
+}
+
+.loader .dot4{
+  --i: 4;
+  --total-dots: 8;
+  --duration: 2000ms;
+  --dot-decrement: calc(1px * var(--i));
+  --dot-size: calc(16px - var(--dot-decrement));
+  height: var(--dot-size);
+  width: var(--dot-size);
+  background-color: hsl(34, 78%, 60%);
+  position: absolute;
+  left: calc(50% - var(--dot-size) / 2);
+  top: calc(0% - var(--dot-size) / 2);
+  transform-origin: calc(var(--dot-size) / 2) calc((var(--circle-size) / 2) + var(--dot-size) / 2);
+  animation: spin var(--duration) ease-out infinite;
+  animation-delay: calc(((var(--duration) / 2) / var(--total-dots)) * var(--i));
+  border-radius: 50%;
+}
+.loader .dot5{
+  --i: 5;
+  --total-dots: 8;
+  --duration: 2000ms;
+  --dot-decrement: calc(1px * var(--i));
+  --dot-size: calc(16px - var(--dot-decrement));
+  height: var(--dot-size);
+  width: var(--dot-size);
+  background-color: hsl(34, 78%, 60%);
+  position: absolute;
+  left: calc(50% - var(--dot-size) / 2);
+  top: calc(0% - var(--dot-size) / 2);
+  transform-origin: calc(var(--dot-size) / 2) calc((var(--circle-size) / 2) + var(--dot-size) / 2);
+  animation: spin var(--duration) ease-out infinite;
+  animation-delay: calc(((var(--duration) / 2) / var(--total-dots)) * var(--i));
+  border-radius: 50%;
+}
+
+.loader .dot6{
+  --i: 6;
+  --total-dots: 8;
+  --duration: 2000ms;
+  --dot-decrement: calc(1px * var(--i));
+  --dot-size: calc(16px - var(--dot-decrement));
+  height: var(--dot-size);
+  width: var(--dot-size);
+  background-color: hsl(34, 78%, 60%);
+  position: absolute;
+  left: calc(50% - var(--dot-size) / 2);
+  top: calc(0% - var(--dot-size) / 2);
+  transform-origin: calc(var(--dot-size) / 2) calc((var(--circle-size) / 2) + var(--dot-size) / 2);
+  animation: spin var(--duration) ease-out infinite;
+  animation-delay: calc(((var(--duration) / 2) / var(--total-dots)) * var(--i));
+  border-radius: 50%;
+}
+.loader .dot7{
+  --i: 7;
+  --total-dots: 8;
+  --duration: 2000ms;
+  --dot-decrement: calc(1px * var(--i));
+  --dot-size: calc(16px - var(--dot-decrement));
+  height: var(--dot-size);
+  width: var(--dot-size);
+  background-color: hsl(34, 78%, 60%);
+  position: absolute;
+  left: calc(50% - var(--dot-size) / 2);
+  top: calc(0% - var(--dot-size) / 2);
+  transform-origin: calc(var(--dot-size) / 2) calc((var(--circle-size) / 2) + var(--dot-size) / 2);
+  animation: spin var(--duration) ease-out infinite;
+  animation-delay: calc(((var(--duration) / 2) / var(--total-dots)) * var(--i));
+  border-radius: 50%;
+}
+.loader .dot0{
+  --i: 0;
+  --total-dots: 8;
+  --duration: 2000ms;
+  --dot-decrement: calc(1px * var(--i));
+  --dot-size: calc(16px - var(--dot-decrement));
+  height: var(--dot-size);
+  width: var(--dot-size);
+  background-color: hsl(34, 78%, 60%);
+  position: absolute;
+  left: calc(50% - var(--dot-size) / 2);
+  top: calc(0% - var(--dot-size) / 2);
+  transform-origin: calc(var(--dot-size) / 2) calc((var(--circle-size) / 2) + var(--dot-size) / 2);
+  animation: spin var(--duration) ease-out infinite;
+  animation-delay: calc(((var(--duration) / 2) / var(--total-dots)) * var(--i));
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+@keyframes spin{
+  0%{
+    transform: rotate(0);
+  }
+  50%, 100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+

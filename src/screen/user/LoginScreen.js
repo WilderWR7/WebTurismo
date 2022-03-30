@@ -1,30 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import turismoDB from '../../api/turismoDB'
 import { Breadcrumb } from '../../components/public/Breadcrumb'
+import { useForm } from '../../hooks/useForm'
 
 export const LoginScreen = () => {
-  return (
-      <>
-        <Breadcrumb type='Iniciar Sesión' />
-        {/* //   <!-- breadcrumb end --> */}
+    const {handleInputChange,values} =useForm({text: '', password:''})
+    const [first, setfirst] = useState(1)
+    // const Navigate = useNavigate()
+    const handleSubmit = (e)=> {
+        e.preventDefault()
+        
+        login(values.text,values.password)
+    }
 
-        {/* //   <!-- login section start --> */}
+    const login = async (email,password)=> {
+        const const1 = turismoDB.post('/login',{
+            "email": email, 
+            "password": password
+        })
+        const resp = await const1;
+        if(!resp.data.user){
+            console.log('error')
+        }
+        else{
+            setfirst(resp.data.user[0].Cod_Role)
+        }
+    }
+    // console.log(first)
+
+    return (
+    <>
+        <Breadcrumb type='Iniciar Sesión' />
+        
         <section className="login-section section-padding">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-7 col-lg-6 col-xl-5">
                         <div className="login-form box">
                             <h2 className="form-title text-center">Inicia Sesión con tu Cuenta</h2>
-                            <form action="">
+                            <form onSubmit={(e)=>handleSubmit(e)}>
                                 <div className="form-group">
-                                    <input type="email" className="form-control" placeholder="Correo"/>
+                                    <input value={values.text} onChange={(e)=>handleInputChange(e)} name='text' type="text" className="form-control" placeholder="Correo"/>
                                 </div>
                                 <div className="form-group">
                                     <div className="d-flex mb-2 justify-content-end"><Link to=''>Olvidaste tu Contraseña?</Link></div>
-                                    <input type="password" className="form-control" placeholder="Contraseña"/>
+                                    <input value={values.password} onChange={(e)=>handleInputChange(e)} name='password' type="password" className="form-control" placeholder="Contraseña"/>
                                 </div>
                                 <button type="submit" className="btn btn-theme btn-block btn-form">Iniciar Sesión</button>
-                                <p className="text-center mt-4 mb-0">Aún no estás registrado ? <Link to='' >Registrarse</Link></p>
+                                <p className="text-center mt-4 mb-0">Aún no estás registrado ? <Link to='/signUpUsers' >Registrarse</Link></p>
                             </form>
                         </div>
                     </div>
@@ -32,6 +56,6 @@ export const LoginScreen = () => {
             </div>
         </section>
         {/* <!-- login section end --> */}
-      </>
-  )
+    </>
+    )
 }

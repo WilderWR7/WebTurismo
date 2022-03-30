@@ -1,19 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const NavBar = () => {
+export const NavBar = ({type}) => {
   return (
     <header className="topbar">
     <nav className="navbar top-navbar navbar-expand-md navbar-light">
         <div className="navbar-header">
-            <a className="navbar-brand" href="index2.html">
+            <Link className="navbar-brand" to={type} >
                 <img src="../assets/images/logo-icon.png" alt="homepage" className="dark-logo" />
                 <img src="../assets/images/logo-light-icon.png" alt="homepage" className="light-logo" />
                 <span>
                     <img src="../assets/images/logo-text.png" alt="homepage" className="dark-logo" />
                     <img src="../assets/images/logo-light-text.png" className="light-logo" alt="homepage" />
                 </span>
-            </a>
+            </Link>
         </div>
         <div className="navbar-collapse">
             <ul className="navbar-nav mr-auto">

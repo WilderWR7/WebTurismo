@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { hotel } from '../../data/info'
 import { CardHotel } from './CardHotel'
 import { TitleSection } from './TitleSection'
 
-export const SectionHotel = () => {
+export const SectionHotel = ({data}) => {
+    console.log(data)
   return (
     <section className="courses-section section-padding mt-4">
         <section className="seccion-grid">
@@ -12,7 +12,7 @@ export const SectionHotel = () => {
                 <TitleSection first={'Hoteles'} second={'Encuentra el hotel confortable y cómodo para ti y tu familia'} />
                 <div className="row">
                     {
-                        hotel.map(hotel=> <CardHotel key={hotel.title} {...hotel}/>)
+                        data.hotels.slice(4,8).map(hotel=> <CardHotel key={hotel.Name} {...hotel}/>)
                     }
                 </div>
                 <div className="row">

@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { agency } from '../../data/info'
 import { CardHotel } from './CardHotel'
 import { TitleSection } from './TitleSection'
 
-export const SectionAgency = () => {
+export const SectionAgency = ({data}) => {
   return (
     <section className="courses-section section-padding mt-4">
         <section className="seccion-grid">
@@ -12,7 +11,7 @@ export const SectionAgency = () => {
                 <TitleSection first={'AGENCIAS TURÍSTICAS'} second={'ENCUENTRA LA AGENCIA QUE OFREZCA LO MEJOR PARA TI Y TU FAMILIA'} />
                 <div className="row">
                     {
-                        agency.map(agency=> <CardHotel key={agency.title} {...agency} />)
+                        data.agencies.slice(0,4).map(agency=> <CardHotel key={agency.Name} {...agency} />)
                     }
                 </div>
                 <div className="row">

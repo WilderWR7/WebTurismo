@@ -1,21 +1,21 @@
 import React from 'react'
 
-export const CardHotel = ({title,star,img}) => {
+export const CardHotel = ({Name,Image_Url}) => {
     return (
         <div className="col-md-6 col-lg-3">
             <div className="courses-item">
-                <a href="#" className="link">
+                <a href="#" className="link wilder">
                     <div className="courses-item-inner">
                     <div className="img-box">
-                        <img src={`${img}`} alt="course img"/>
+                        <img src={`${Image_Url}`} alt={`${Name}`}/>
                     </div>
-                    <h3 className="title">{title}</h3>
+                    <h3 className="title">{Name}</h3>
                     <div className="instructor">
                         {/* <!-- <img src="img/instructor/1.png" alt="instructor img"> --> */}
                         {/* <!-- <span className="instructor-name">john doe</span> --> */}
                     </div>
                     <div className="rating">
-                        <span className="average-rating">{star}</span>
+                        <span className="average-rating">5</span>
                         <span className="average-stars">
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>

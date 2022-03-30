@@ -1,8 +1,8 @@
 import React from 'react'
-import { SectionHotel } from '../../components/public/SectionHotel'
+import { SectionHotelFull } from '../../components/public/SectionHotelFull'
 
 export const HotelsScreen = () => {
   return (
-      <SectionHotel/>
+      <SectionHotelFull/>
   )
 }

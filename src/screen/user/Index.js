@@ -1,10 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SectionHotel } from '../../components/public/SectionHotel'
 import { SectionPlace } from '../../components/public/SectionPlace'
 import { SectionAgency } from '../../components/public/SectionAgency'
+import turismoDB from '../../api/turismoDB'
 
 export const Index = () => {
+  const [dataResp, setAgency] = useState({
+    dataHotel:[],
+    dataAgency:[],
+    dataPlaces: []
+  })
+  // {
+  //   Name: '',
+  //   Image_Url:''
+  // }
+  const getMovieDetails = async()=>{
+      const const1 =  turismoDB.get('/agencies')
+      const const2 =  turismoDB.get('/hotels')
+      const const3 =  turismoDB.get('/places')
+      const [agency,hotel,place] = await Promise.all([const1,const2,const3])
+      setAgency({
+          dataHotel: hotel.data.data,
+          dataAgency: agency.data.data,
+          dataPlaces: place.data.data
+      })
+  }
+
+  useEffect(() => {
+    getMovieDetails()
+  }, [])
+  const {dataAgency,dataHotel,dataPlaces}= dataResp;
+  console.log(dataResp)
   return (
     <>
     <section className="heronuevo">
@@ -17,11 +44,15 @@ export const Index = () => {
         </div>
       </div>
     </section>
-    <SectionPlace/>
-
-    <SectionHotel/>
-
-    <SectionAgency/>
+    {
+      dataPlaces.length !== 0 && <SectionPlace data = {dataPlaces}/>
+    }
+    {
+      dataHotel.length !== 0 && <SectionHotel data= {dataHotel} />
+    }
+    {
+      dataAgency.length !== 0 && <SectionAgency data = {dataAgency}/>
+    }
 
     <div className="container">
       <div className="row justify-content-center">
